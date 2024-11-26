@@ -12,7 +12,3 @@
 </head>
 
 <body class="inter-regular">
-    as
-</body>
-
-</html>
