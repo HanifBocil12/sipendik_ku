@@ -9,9 +9,6 @@
                 case 'students':
                     echo 'Students';
                     break;
-                case 'classes':
-                    echo 'Clases';
-                    break;
                 case 'teachers':
                     echo "Coming Soon";
                     break;

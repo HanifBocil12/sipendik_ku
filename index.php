@@ -27,9 +27,6 @@
                     case 'edit-student':
                         include 'pages/edit-student.php';
                         break;
-                    case 'classes':
-                        include 'pages/classes.php';
-                        break;
                     case 'teachers':
                         break;
                     case 'settings':
