@@ -9,6 +9,38 @@
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+    .sidebar {
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sidebar a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+        background-color: #ddd;
+    }
+
+    .sidebar a {
+        display: block;
+        /* Membuat elemen 'a' menjadi block agar mengambil lebar penuh */
+        width: 100%;
+        /* Pastikan lebarnya 100% */
+        box-sizing: border-box;
+        /* Menghitung padding dan border dalam lebar total */
+    }
+    </style>
 </head>
 
 <body class="inter-regular">
