@@ -37,8 +37,11 @@
         </div>
 
         <div class="row">
+            <div class="col-auto">
+                col
+            </div>
             <div class="col">
-
+                <textarea name="descripsi" id="" class="form-control"></textarea>
             </div>
         </div>
     </form>
