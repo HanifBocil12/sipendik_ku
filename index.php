@@ -1,4 +1,6 @@
 <?php 
+    include 'asset/php/template.php';
+    include 'config/koneksi.php';
     include 'layout/headher.php';
     include 'partials/navbar.php';
 ?>
