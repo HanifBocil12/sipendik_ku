@@ -38,11 +38,11 @@
         <div class="row mb-2">
             <label for="tgl_lahir" class="col-2 form-label">Date of Birth</label>
             <div class="col-4">
-              <input class="form-control form-control-sm" type="date" name="tgl_lahir" required>
+              <input value="" class="form-control form-control-sm" type="date" name="tgl_lahir" required>
             </div>
             <label for="no_telp" class="col-2 form-label">Phone</label>
             <div class="col-4">
-              <input class="form-control form-control-sm" type="text" name="no_telp" minlength="12" maxlength="13" required>
+              <input value="" class="form-control form-control-sm" type="text" name="no_telp" minlength="12" maxlength="13" required>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                 Addres
             </div>
             <div class="col">
-                <textarea name="descripsi" id="" class="form-control"></textarea>
+                <textarea name="alamat" id="" class="form-control"></textarea>
             </div>
         </div>
         

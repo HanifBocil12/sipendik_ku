@@ -6,7 +6,7 @@
                         <label for="' . $name . '" class="col-form-label">' . $label . '</label>
                     </div>
                     <div class="col">
-                        <input type="' . $type . '" class="form-control" name="' . $name . '">
+                        <input value="" type="' . $type . '" class="form-control" name="' . $name . '">
                     </div>  
                 </div>';
     }
