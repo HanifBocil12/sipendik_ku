@@ -2,7 +2,6 @@
     include 'asset/php/template.php';
     include 'config/koneksi.php';
     include 'layout/headher.php';
-    include 'partials/navbar.php';
 ?>
 <div class="container-fluid">
     <div class="row">
@@ -12,6 +11,7 @@
         </div>
         <div class="col-10">
             <?php 
+                include 'partials/navbar.php';
                 $page = isset($_GET["page"]) ? $_GET['page'] : 'dashboard';
                 switch($page){
                     case 'dashboard' : 
