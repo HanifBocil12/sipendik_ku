@@ -2,6 +2,7 @@
 include 'koneksi.php';
 
 $aksi = isset($_GET['aksi']) ? $_GET['aksi'] : '';
+$class_filter = isset($_GET['class_filter']) ? $_GET['class_filter'] : 'all'; 
 
 switch ($aksi) {
 case 'add-student':

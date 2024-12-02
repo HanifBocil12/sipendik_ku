@@ -1,11 +1,23 @@
+<?php
+    $ifs = '';
+    function getClass() {
+        return $this->ifs;
+    }
+?>
+
 <div class="d-flex justify-content-between align-items-center mb-3 me-3">
     <div class="mb-3">
-        <select class="form-select" id="floatingSelectGrid">
-            <option selected>Class</option>
-            <option value="1">XI RPL 1</option>
-            <option value="2">XI RPL 2</option>
-            <option value="3">XI RPL 3</option>
-        </select>
+        
+            
+                <div class="mb-3">
+                    <select class="form-select" name="ifs" id="floatingSelectGrid">
+                        <option value="Class">Class</option>
+                        <option value="XI-RPL">XI RPL</option>
+                        <option value="XI-DPIB"><?php $ifs;?></option>
+                    </select>
+                </div>
+          
+      
     </div>
     <a href="index.php?page=add-student" class="btn btn-primary btn-sm rounded-4 px-3">
         <i class="bi bi-plus-circle"></i>
@@ -28,10 +40,10 @@
         </tr>
     </thead>
     <tbody>
-        <?php
-    $query = "SELECT * FROM tb_students";
-    $result = mysqli_query($conn, $query);
-    while ($data = mysqli_fetch_array($result)) {
+    <?php
+        $query = "SELECT * FROM tb_students";
+        $result = mysqli_query($conn, $query);
+        while ($data = mysqli_fetch_array($result)) {
     ?>
         <tr>
             <td class="text-center">1</td>
