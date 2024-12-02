@@ -7,15 +7,15 @@ switch ($aksi) {
 case 'add-student':
     // Menangkap data yang di kirim dari form
     $nisn = $_POST['nisn'];
-    $nama_siswa = $_POST['nama_siswa'];
+    $nama_siswa = $_POST['nama'];
     $jk = $_POST['jk'];
     $tgl_lahir = $_POST['tgl_lahir'];
     $id_kelas = $_POST['id_kelas'];
     $no_telp = $_POST['no_telp'];
     $alamat = $_POST['alamat'];
     // Foto Siswa
-    $filename = $_FILES['foto_siswa']['name'];
-    $ukuran_file = $_FILES['foto_siswa']['size'];
+    $filename = $_FILES['photo']['name'];
+    $ukuran_file = $_FILES['photo']['size'];
     $allow_extention = array('jpg', 'jpeg', 'png', 'gif');
     $allow_size = 2 * 1024 * 1024; // 2MB
     $extention_file = pathinfo($filename, PATHINFO_EXTENSION);
@@ -26,9 +26,9 @@ case 'add-student':
     } else {
     if ($ukuran_file < $allow_size) {
         // Memindahkan file ke folder tujuan
-        move_uploaded_file($_FILES['foto_siswa']['tmp_name'], '../assets/img/' . $foto_siswa);
+        move_uploaded_file($_FILES['photo']['tmp_name'], '../assets/img/' . $foto_siswa);
         // Melakukan query dengan perintah INSERT untuk memasukkan data ke database
-        $query = "INSERT INTO tb_students (id, nisn, nama_siswa, jk, tgl_lahir, id_kelas, no_telp, alamat, foto_siswa) VALUES (NULL, '$nisn', '$nama_siswa', '$jk', '$tgl_lahir', '$id_kelas', '$no_telp', '$alamat', '$foto_siswa')";
+        $query = "INSERT INTO tb_students (id, nisn, nama, jk, tgl_lahir, id_kelas, no_telp, alamat, photo) VALUES (NULL, '$nisn', '$nama_siswa', '$jk', '$tgl_lahir', '$id_kelas', '$no_telp', '$alamat', '$foto_siswa')";
         // var_dump($query);
         // exit();
         // Mengeksekusi/menjalankan query diatas
@@ -49,15 +49,15 @@ case 'update-student':
     // Menangkap data yang di kirim dari form
     $id = $_GET['id'];
     $nisn = $_POST['nisn'];
-    $nama_siswa = $_POST['nama_siswa'];
+    $nama_siswa = $_POST['nama'];
     $jk = $_POST['jk'];
     $tgl_lahir = $_POST['tgl_lahir'];
     $id_kelas = $_POST['id_kelas'];
     $no_telp = $_POST['no_telp'];
     $alamat = $_POST['alamat'];
     // Foto Siswa
-    $filename = $_FILES['foto_siswa']['name'];
-    $ukuran_file = $_FILES['foto_siswa']['size'];
+    $filename = $_FILES['photo']['name'];
+    $ukuran_file = $_FILES['photo']['size'];
     $allow_extention = array('jpg', 'jpeg', 'png', 'gif');
     $allow_size = 10 * 1024 * 1024; // 2MB
     $extention_file = pathinfo($filename, PATHINFO_EXTENSION);
@@ -86,7 +86,7 @@ case 'update-student':
           // Memindahkan foto ke folder tujuan
         move_uploaded_file($_FILES['foto_siswa']['tmp_name'], '../assets/img/' . $foto_siswa);
           // Melakukan query dengan perintah INSERT untuk memasukkan data ke database
-        $query = "UPDATE tb_students SET nisn = '$nisn', nama_siswa = '$nama_siswa', jk = '$jk', tgl_lahir = '$tgl_lahir', id_kelas = '$id_kelas', no_telp = '$no_telp', alamat = '$alamat', foto_siswa = '$foto_siswa' WHERE id = '$id'";
+        $query = "UPDATE tb_students SET nisn = '$nisn', nama = '$nama_siswa', jk = '$jk', tgl_lahir = '$tgl_lahir', id_kelas = '$id_kelas', no_telp = '$no_telp', alamat = '$alamat', phoyo = '$foto_siswa' WHERE id = '$id'";
           // var_dump($query);
           // exit();
           // Mengeksekusi/menjalankan query diatas
@@ -109,7 +109,7 @@ case 'update-student':
 case 'delete-student':
     $id = $_GET['id'];
     // Query untuk mendapatkan path foto lama
-    $query_foto = "SELECT foto_siswa FROM tb_students WHERE id = ?";
+    $query_foto = "SELECT photo FROM tb_students WHERE id = ?";
     $stmt = $conn->prepare($query_foto);
     $stmt->bind_param("i", $id);
     $stmt->execute();

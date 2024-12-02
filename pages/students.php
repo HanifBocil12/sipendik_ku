@@ -7,7 +7,8 @@
             <option value="3">XI RPL 3</option>
         </select>
     </div>
-    <a href="index.php?page=add-student" class="btn btn-primary btn-sm rounded-4 px-3"><i class="bi bi-plus-circle"></i>
+    <a href="index.php?page=add-student" class="btn btn-primary btn-sm rounded-4 px-3">
+        <i class="bi bi-plus-circle"></i>
         Add</a>
 </div>
 <p>
@@ -35,24 +36,26 @@
         <tr>
             <td class="text-center">1</td>
             <td class="text-center"><?= $data['nisn']; ?></td>
-            <td><?= $data['nama_siswa']; ?></td>
+            <td><?= $data['nama']; ?></td>
             <td class="text-center"><?= $data['jk']; ?></td>
             <td class="text-center"><?= $data['id_kelas']; ?></td>
             <td><img class="object-fit-cover border rounded" width="60px" height="80"
-                    src="assets/img/<?= $data['foto_siswa']; ?>" alt="<?= $data['foto_siswa']; ?>"></td>
+                    src="assets/img/<?= $data['photo']; ?>" alt="<?= $data['photo']; ?>"></td>
             <td>
                 <a href="index.php?page=detail-student&id=<?= $data['id']; ?>" class="btn btn-info btn-sm"><i
                         class="bi bi-person-vcard"></i></a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal"
-                    data-bs-target="#modalDetaliSiswa<?= $data['id'];; ?>">
+                    data-bs-target="#modalDetaliSiswa<?= $data['id']; ?>">
                     <i class="bi bi-person-vcard"></i>
                 </button>
-                <?php include 'partials/modal-detail-student.php' ?>
+                <?php include 'partials/modal-detail-siswa.php' ?>
                 <a href="index.php?page=edit-student&id=<?= $data['id']; ?>" class="btn btn-warning btn-sm"><i
                         class=" bi bi-pencil-square"></i></a>
-                <a href="config/crud.php?aksi=delete-student&id=<?= $data['id']; ?>" class="btn btn-danger btn-sm"
-                    onclick="return confirmDelete(event, <?= $data['id']; ?>)"><i class="bi bi-x-lg"></i></a>
+                        <a href="config/crud.php?aksi=delete-student&id=<?= $data['id']; ?>" class="btn btn-danger btn-sm" 
+                        onclick="return confirmDelete(event, <?= $data['id']; ?>)">
+                            <i class="bi bi-x-lg"></i>
+                        </a>
             </td>
         </tr>
         <?php

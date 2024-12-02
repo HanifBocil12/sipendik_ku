@@ -8,7 +8,7 @@
     <span class="fw-bold">Formulir Siswa</span>
     <form action="config/crud.php?aksi=add-student" method="post" enctype="multipart/form-data">
         <?php echo container("nisn","text","Nisn");?>
-        <?php echo container("name","text","Name");?>
+        <?php echo container("nama","text","Name");?>
         <div class="row mb-2 align-items-center">
             <label for="id_kelas" class="col-2 form-label">Class</label>
             <div class="col">
@@ -58,7 +58,7 @@
         <?php echo container("photo", "file", "Photo")?>
 
         <div class="d-flex justify-content-end">
-            <button class="btn btn-primary btn-sm float-end"" type="submit">
+            <button class="btn btn-primary btn-sm float-end" type="submit">
                 Save
             </div>
         </div>
