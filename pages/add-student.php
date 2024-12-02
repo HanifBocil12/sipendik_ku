@@ -46,6 +46,8 @@
             </div>
         </div>
 
+        <!-- Addres -->
+
         <div class="row mb-2">
             <div class="col-2">
                 Addres
@@ -54,6 +56,15 @@
                 <textarea name="alamat" id="" class="form-control"></textarea>
             </div>
         </div>
+
+        <!-- Photo -->
+
+        <!-- <div class="row mb-2">
+            <label for="photo" class="col-3 form-label">Photo</label>
+            <div class="col-9">
+              <input class="form-control form-control-sm mb-2" type="file" name="photo">
+            </div>
+          </div> -->
         
         <?php echo container("photo", "file", "Photo")?>
 

@@ -26,7 +26,7 @@ case 'add-student':
     } else {
     if ($ukuran_file < $allow_size) {
         // Memindahkan file ke folder tujuan
-        move_uploaded_file($_FILES['photo']['tmp_name'], '../assets/img/' . $foto_siswa);
+        move_uploaded_file($_FILES['photo']['tmp_name'], '../asset/img/' . $foto_siswa);
         // Melakukan query dengan perintah INSERT untuk memasukkan data ke database
         $query = "INSERT INTO tb_students (id, nisn, nama, jk, tgl_lahir, id_kelas, no_telp, alamat, photo) VALUES (NULL, '$nisn', '$nama_siswa', '$jk', '$tgl_lahir', '$id_kelas', '$no_telp', '$alamat', '$foto_siswa')";
         // var_dump($query);
@@ -80,11 +80,11 @@ case 'update-student':
     } else {
         if ($ukuran_file < $allow_size) {
           // Hapus foto lama dari folder jika ada
-        if ($old_foto && file_exists('../assets/img/' . $old_foto)) {
-            unlink('../assets/img/' . $old_foto);
+        if ($old_foto && file_exists('../asset/img/' . $old_foto)) {
+            unlink('../asset/img/' . $old_foto);
         }
           // Memindahkan foto ke folder tujuan
-        move_uploaded_file($_FILES['foto_siswa']['tmp_name'], '../assets/img/' . $foto_siswa);
+        move_uploaded_file($_FILES['foto_siswa']['tmp_name'], '../asset/img/' . $foto_siswa);
           // Melakukan query dengan perintah INSERT untuk memasukkan data ke database
         $query = "UPDATE tb_students SET nisn = '$nisn', nama = '$nama_siswa', jk = '$jk', tgl_lahir = '$tgl_lahir', id_kelas = '$id_kelas', no_telp = '$no_telp', alamat = '$alamat', phoyo = '$foto_siswa' WHERE id = '$id'";
           // var_dump($query);
@@ -118,8 +118,8 @@ case 'delete-student':
     $stmt->close();
 
     // Hapus foto lama dari folder jika ada
-    if ($old_foto && file_exists('../assets/img/' . $old_foto)) {
-    unlink('../assets/img/' . $old_foto);
+    if ($old_foto && file_exists('../asset/img/' . $old_foto)) {
+    unlink('../asset/img/' . $old_foto);
     }
 
     $query = "DELETE FROM tb_students WHERE id = $id";

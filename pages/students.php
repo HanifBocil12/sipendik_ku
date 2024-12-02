@@ -40,7 +40,7 @@
             <td class="text-center"><?= $data['jk']; ?></td>
             <td class="text-center"><?= $data['id_kelas']; ?></td>
             <td><img class="object-fit-cover border rounded" width="60px" height="80"
-                    src="assets/img/<?= $data['photo']; ?>" alt="<?= $data['photo']; ?>"></td>
+                    src="asset/img/<?= $data['photo']; ?>" alt="<?= $data['photo']; ?>"></td>
             <td>
                 <a href="index.php?page=detail-student&id=<?= $data['id']; ?>" class="btn btn-info btn-sm"><i
                         class="bi bi-person-vcard"></i></a>

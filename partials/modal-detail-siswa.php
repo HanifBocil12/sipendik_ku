@@ -11,7 +11,7 @@
           <div class="row">
             <h5>Detail Student</h5>
             <div class="col-3">
-              <img class="object-fit-cover w-100" src="assets/img/<?= $data['foto_siswa']; ?>" alt="Foto Siswa">
+              <img class="object-fit-cover w-100" src="asset/img/<?= $data['foto_siswa']; ?>" alt="Foto Siswa">
             </div>
             <div class="col-9">
               <h5 class="mb-2">Personal Data</h5>
@@ -30,21 +30,21 @@
                     <h6><?= $data['id_kelas']; ?></h6>
                   </div>
                   <div class="mb-3">
-                    <label class="mb-1" for="nama">Gender</label>
+                    <label class="mb-1" for="jk">Gender</label>
                     <h6><?= $data['jk']; ?></h6>
                   </div>
                 </div>
                 <div class="col-7">
                   <div class="mb-3">
-                    <label class="mb-1" for="nama">Date of Birth</label>
+                    <label class="mb-1" for="tgl_lahir">Date of Birth</label>
                     <h6><?= $data['tgl_lahir']; ?></h6>
                   </div>
                   <div class="mb-3">
-                    <label class="mb-1" for="nama">Phone Number</label>
+                    <label class="mb-1" for="no_telp">Phone Number</label>
                     <h6><?= $data['no_telp']; ?> <a href="" class="btn btn-success btn-sm rounded-5 ms-1"><i class="bi bi-whatsapp"></i></a></h6>
                   </div>
                   <div class="mb-3">
-                    <label class="mb-1" for="nama">Address</label>
+                    <label class="mb-1" for="alamat">Address</label>
                     <h6><?= $data['alamat']; ?></h6>
                   </div>
                 </div>
