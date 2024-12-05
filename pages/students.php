@@ -7,19 +7,18 @@
 
 <div class="d-flex justify-content-between align-items-center mb-3 me-3">
     <div class="mb-3">
-        
-            
-                <div class="mb-3">
-                    <select class="form-select" name="ifs" id="floatingSelectGrid">
-                        <option value="Class">Class</option>
-                        <option value="XI-RPL">XI RPL</option>
-                        <option value="XI-DPIB"><?php $ifs;?></option>
-                    </select>
-                </div>
-          
-      
+        <!-- Path page=student & id -->
+        <!-- index.php?page=edit-student&id=<?= #$data['id']; ?> -->
+        <div class="mb-3">
+            <select class="form-select" name="ifs" id="floatingSelectGrid">
+                <option value="Class">Class</option>
+                <option value="XI-RPL">XI RPL</option>
+                <option value="XI-DPIB"><?php $ifs;?></option>
+            </select>
+        </div>
+
     </div>
-    <a href="index.php?page=add-student" class="btn btn-primary btn-sm rounded-4 px-3">
+    <a href="index.php?page=add-student" class="btn btn-primary btn-sm rouned-4 px-3">
         <i class="bi bi-plus-circle"></i>
         Add</a>
 </div>
@@ -40,7 +39,7 @@
         </tr>
     </thead>
     <tbody>
-    <?php
+        <?php
         $query = "SELECT * FROM tb_students";
         $result = mysqli_query($conn, $query);
         while ($data = mysqli_fetch_array($result)) {
@@ -64,10 +63,10 @@
                 <?php include 'partials/modal-detail-siswa.php' ?>
                 <a href="index.php?page=edit-student&id=<?= $data['id']; ?>" class="btn btn-warning btn-sm"><i
                         class=" bi bi-pencil-square"></i></a>
-                        <a href="config/crud.php?aksi=delete-student&id=<?= $data['id']; ?>" class="btn btn-danger btn-sm" 
-                        onclick="return confirmDelete(event, <?= $data['id']; ?>)">
-                            <i class="bi bi-x-lg"></i>
-                        </a>
+                <a href="config/crud.php?aksi=delete-student&id=<?= $data['id']; ?>" class="btn btn-danger btn-sm"
+                    onclick="return confirmDelete(event, <?= $data['id']; ?>)">
+                    <i class="bi bi-x-lg"></i>
+                </a>
             </td>
         </tr>
         <?php
